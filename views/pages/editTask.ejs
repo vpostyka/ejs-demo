@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+
+  <body class="container">
+    <header><%- include('../partials/header'); %></header>
+
+    <main>
+      <form action="<%= '/tasks/update/' + task.id %>" method="post">
+        <label for="name">Name:</label> <br />
+        <input name="name" value="<%= task.name %>" /><br />
+        <label for="complete-checkbox">Completed: </label>
+        <input type="checkbox" name="isTaskComplete" id="complete-checkbox"
+        value="true" <%= task.completed ? 'checked' : '' %>><br /><br />
+        <button type="submit">Update</button>
+      </form>
+    </main>
+
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
+</html>
